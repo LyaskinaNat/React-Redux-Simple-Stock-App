@@ -5,9 +5,55 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #363637;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+nav .nav {
+  position: relative;
+  color: #ebebeb;
+  float: left;
+  font-size: 2.1rem;
+  padding: 0;
+}
+
+.dashboard {
+  margin: 2em;
+}
+
+.trades {
+  color: #2196f3;
+  
+}
+input[type=text]:not(.browser-default):focus:not([readonly]),
+input[type=email]:not(.browser-default):focus:not([readonly]),
+input[type=password]:not(.browser-default):focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]){
+  border-color: #2196f3;
+  box-shadow: none;
+}
+
+input[type=text]:not(.browser-default):focus:not([readonly]) + label,
+textarea.materialize-textarea:focus:not([readonly]) + label,
+input[type=email]:not(.browser-default):focus:not([readonly]) + label,
+input[type=password]:not(.browser-default):focus:not([readonly]) + label{
+  color: #2196f3 !important;
+}
+th {
+
+  color:#ebebeb;
+}
+td {
+
+  color:grey;
+}
+
+tbody tr:hover {
+
+  background-color:#363637;
+  color:#2196f3;
 }
