@@ -1,9 +1,13 @@
 import React, { Component } from 'react'
 import Maketrade from './makeTrade'
-import Recenttrades from './recentTrades'
+import RecentTrades from './recentTrades'
+import { connect } from 'react-redux'
 
-class Dashboard extends Component {
+class tradesDashboard extends Component {
   render() {
+
+      const { trades } = this.props;
+            console.log(trades)
     return (
       <div className="dashboard">
         <div className="row">
@@ -11,12 +15,17 @@ class Dashboard extends Component {
             <Maketrade />
           </div>
           <div className="col s12 m7 offset-m1">
-            <Recenttrades />
+            <RecentTrades trades={ trades } />
           </div>
         </div>
       </div>
     )
   }
 }
-
-export default Dashboard
+const mapStateToProps = (state) => {
+    return {
+      trades: state.trade.trades
+    }
+  }
+  
+  export default connect(mapStateToProps)(tradesDashboard)

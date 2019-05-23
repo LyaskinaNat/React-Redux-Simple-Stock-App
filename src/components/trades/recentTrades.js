@@ -1,7 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-class Recenttrades extends Component {
-    render() {
+const RecentTrades = ({trades}) => {
+   
+  //      console.log(trades);
     return (
         <div className=" section trades">
             <div className="card grey darken-3 z-depth-1">
@@ -19,50 +20,26 @@ class Recenttrades extends Component {
         </thead>
 
         <tbody>
-          <tr>
-            <td>23 May 2019</td>
-            <td>TEA</td>
-            <td>Buy</td>
-            <td>230</td>
-            <td>105</td>
-          </tr>
-          <tr>
-            <td>23 May 2019</td>
-            <td>POP</td>
-            <td>Buy</td>
-            <td>230</td>
-            <td>105</td>
-          </tr>
-          <tr>
-            <td>23 May 2019</td>
-            <td>ALE</td>
-            <td>Buy</td>
-            <td>230</td>
-            <td>105</td>
-          </tr>
-          <tr>
-            <td>23 May 2019</td>
-            <td>GIN</td>
-            <td>Buy</td>
-            <td>230</td>
-            <td>105</td>
-          </tr>
-          <tr>
-            <td>23 May 2019</td>
-            <td>JOE</td>
-            <td>Buy</td>
-            <td>230</td>
-            <td>105</td>
-          </tr>
-        </tbody>
+        { trades && trades.map(trade => {
+        return (
+            <tr key={ trade.id }>
+            <td>{trade.transactionDate}</td>
+            <td>{trade.stock}</td>
+            <td>{trade.buyOrSell}</td>
+            <td>{trade.price}</td>
+            <td>{trade.quantity}</td>
+            </tr>
+        )
+      })} 
+       </tbody>
       </table>
                 </div>
             </div>
         </div>
     )
 }
-}
 
-export default Recenttrades
+
+export default RecentTrades
 
 
