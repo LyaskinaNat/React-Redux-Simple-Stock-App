@@ -30,18 +30,18 @@ nav .nav {
   
 }
 input[type=text]:not(.browser-default):focus:not([readonly]),
-input[type=email]:not(.browser-default):focus:not([readonly]),
-input[type=password]:not(.browser-default):focus:not([readonly]),
+input[type=number]:not(.browser-default):focus:not([readonly]),
 textarea.materialize-textarea:focus:not([readonly]){
-  border-color: #2196f3;
+  border-color: #2196f3 !important;
   box-shadow: none;
+  font-size: 1.1em !important;
 }
 
 input[type=text]:not(.browser-default):focus:not([readonly]) + label,
-textarea.materialize-textarea:focus:not([readonly]) + label,
-input[type=email]:not(.browser-default):focus:not([readonly]) + label,
-input[type=password]:not(.browser-default):focus:not([readonly]) + label{
+input[type=number]:not(.browser-default):focus:not([readonly]) + label,
+textarea.materialize-textarea:focus:not([readonly]) + label {
   color: #2196f3 !important;
+  font-size: 1.1em !important;
 }
 th {
 
@@ -57,3 +57,28 @@ tbody tr:hover {
   background-color:#363637;
   color:#2196f3;
 }
+
+select {
+  background-color: #424242 !important;
+  border: 1px solid #363637!important;
+  border-radius: 2px;
+  color:grey;
+  margin-bottom: .7em !important;
+
+}
+select:hover {
+  border: 1px solid #2196f3 !important;
+ 
+}
+select:active {
+  border: 1px solid #2196f3 !important;
+ 
+}
+label {
+  font-size: .9em !important;
+  float: left;
+  padding: .4em;
+
+}
+
+
