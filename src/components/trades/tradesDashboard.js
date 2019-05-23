@@ -7,7 +7,7 @@ class tradesDashboard extends Component {
   render() {
 
       const { trades } = this.props;
-            console.log(trades)
+//            console.log(trades)
     return (
       <div className="dashboard">
         <div className="row">

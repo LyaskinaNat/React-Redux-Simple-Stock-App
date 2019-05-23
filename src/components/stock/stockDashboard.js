@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
-class Stockdashdoard extends Component {
+class StockDashdoard extends Component {
     render() {
+      const { stock } = this.props
+      console.log(stock)
     return (
         <div className=" section trades dashboard">
         <div className="row">
@@ -21,42 +24,19 @@ class Stockdashdoard extends Component {
         </thead>
 
         <tbody>
-          <tr>
-            <td>TEA</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
+        { stock && stock.map(share => {
+        return (
+            <tr key={ share.id }>
+            <td>{ share.stock }</td>
+            <td>{ share.dividendYield }</td>
+            <td>{ share.peRatio }</td>
+            <td>{ share.volWeightStPrice }</td>
+            <td>{ share.geoMean }</td>
+
           </tr>
-          <tr>
-            <td>POP</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-          </tr>
-          <tr>
-            <td>ALE</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-          </tr>
-          <tr>
-            <td>GIN</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-          </tr>
-          <tr>
-            <td>JOE</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-          </tr>
-        </tbody>
+          )
+      })}   
+          </tbody>
       </table>
                 </div>
             </div>
@@ -67,6 +47,12 @@ class Stockdashdoard extends Component {
 }
 }
 
-export default Stockdashdoard
+const mapStateToProps = (state) => {
+  return {
+    stock: state.stock.stock
+  }
+}
+
+export default connect(mapStateToProps)(StockDashdoard)
 
 

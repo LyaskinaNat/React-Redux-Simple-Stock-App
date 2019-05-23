@@ -23,11 +23,11 @@ const RecentTrades = ({trades}) => {
         { trades && trades.map(trade => {
         return (
             <tr key={ trade.id }>
-            <td>{trade.transactionDate}</td>
-            <td>{trade.stock}</td>
-            <td>{trade.buyOrSell}</td>
-            <td>{trade.price}</td>
-            <td>{trade.quantity}</td>
+            <td>{ trade.transactionDate }</td>
+            <td>{ trade.stock }</td>
+            <td>{ trade.buyOrSell }</td>
+            <td>{ trade.price }</td>
+            <td>{ trade.quantity }</td>
             </tr>
         )
       })} 
